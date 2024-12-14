@@ -1,0 +1,128 @@
+.app-container {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
+  }
+
+  .description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 25px;
+    font-weight: 400;
+  }
+
+  .server-selection {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .label {
+    font-size: 1.1rem;
+    margin-right: 20px;
+    color: #555;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    width: 250px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  .dropdown-selected {
+    padding: 12px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: left;
+    color: #333;
+  }
+
+  .dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .dropdown-item {
+    padding: 12px;
+    font-size: 1rem;
+    text-align: left;
+    color: #333;
+    cursor: pointer;
+  }
+
+  .update-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  .update-button:disabled {
+    background-color: #d3d3d3;
+    cursor: not-allowed;
+  }
+
+  .loading {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 25px;
+    font-style: italic;
+  }
+
+  .error {
+    color: #ff4d4d;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    font-weight: bold;
+  }
+
+  .graph-container {
+    margin-top: 40px;
+  }
+
+  .graph-title {
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 500;
+  }
+
+  .graph-iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }

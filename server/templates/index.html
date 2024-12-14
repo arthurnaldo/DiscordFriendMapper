@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Interaction Graph</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Interaction Graph</h1>
+
+    <!-- Dropdown to select server -->
+    <label for="server_name">Select Server:</label>
+    <select name="server_name" id="server_name">
+        {% for server in server_names %}
+            <option value="{{ server }}">{{ server }}</option>
+        {% endfor %}
+    </select>
+    <button id="update_graph">Update Graph</button>
+
+    <!-- Display success or error message -->
+    <div id="message"></div>
+
+    <!-- Display the graph below the button -->
+    <div id="graph-container">
+        <p>Graph for the selected server will appear below:</p>
+        <iframe id="graph" src="" width="600" height="400" style="display: none;"></iframe>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#update_graph").click(function(event) {
+                event.preventDefault();  // Prevent the default form submission
+
+                var serverName = $("#server_name").val();  // Get the selected server name
+
+                $.ajax({
+                    url: "/update_graph",  // API route to update the graph
+                    method: "POST",
+                    data: { server_name: serverName },  // Send server name as data
+                    success: function(response) {
+                        // Display success message
+                        $("#message").text(response.message);
+                        // Update the iframe source with the new graph path
+                        $("#graph").attr("src", "/graph/" + serverName);
+                        $("#graph").show();  // Show the graph iframe
+                    },
+                    error: function(error) {
+                        // Display error message
+                        $("#message").text("Error: " + error.responseJSON.error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
